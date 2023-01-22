@@ -1,6 +1,6 @@
 # Template ReactJs e Styled Components
 
-<img src="image-template.png" alt="image template">
+<img src="./public/image-template.png" alt="image template">
 
 > Esse template contém react-router-dom configurado, navBar linkada com as rotas/paginas e styledComponents configurado, com globalStyles.
 
