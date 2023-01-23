@@ -92,7 +92,7 @@ export const HeaderStyled = styled.header`
 
   row-gap: 0.3rem;
 
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   h1 {
     color: #fff;
@@ -102,4 +102,11 @@ export const HeaderStyled = styled.header`
   p {
     color: #aaa;
   }
+`;
+
+export const ErrorMessage = styled.p`
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 700;
+  color: #fff;
 `;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FormStyled, HeaderStyled } from "./styles";
+import { FormStyled, HeaderStyled, ErrorMessage } from "./styles";
 
 import { useFetchUser } from "../../hooks/useFetchUser";
 
@@ -7,16 +7,29 @@ import Profile from "../Profile/Profile";
 
 const Form = () => {
   const [user, setUser] = useState("");
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [errorServer, setErrorServer] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setUserData(null);
+    setErrorServer("");
 
-    const userResponse = await useFetchUser(user);
+    if (!user) return;
 
-    setUserData(userResponse);
+    try {
+      setLoading(true);
+      const userResponse = await useFetchUser(user);
 
-    setUser("");
+      setUserData(userResponse.data);
+      setLoading(false);
+    } catch (error) {
+      setErrorServer("Nenhum usuário encontrado!");
+      setLoading(false);
+    }
+
+    // setUser("");
   };
 
   return (
@@ -34,9 +47,10 @@ const Form = () => {
             onChange={({ target }) => setUser(target.value)}
           />
         </label>
-        <button>Procurar</button>
+        {loading ? <button>Aguarde..</button> : <button>Procurar</button>}
       </FormStyled>
-      {userData && <Profile User={userData.data} />}
+      {errorServer && <ErrorMessage>Nenhum usuário encontrado.</ErrorMessage>}
+      {userData && <Profile User={userData} />}
     </>
   );
 };

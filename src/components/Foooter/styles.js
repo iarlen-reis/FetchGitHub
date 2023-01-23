@@ -7,15 +7,17 @@ export const FooterContainer = styled.footer`
   align-items: center;
   justify-content: center;
 
-  background: #aaa;
+  background: #0f0d26;
 
   address {
     font-weight: 500;
     font-style: italic;
+
+    color: #fff;
   }
 
   a {
-    color: #000;
+    color: #fff;
     margin-left: 0.2rem;
 
     transition: all 0.4s;
