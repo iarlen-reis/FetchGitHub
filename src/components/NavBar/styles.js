@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Aside = styled.aside`
   width: 100%;
 
-  background: teal;
+  background: #0f0d26;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   nav {
@@ -22,13 +22,13 @@ export const Aside = styled.aside`
     font-weight: bold;
     font-style: italic;
 
-    color: #000;
+    color: #fff;
 
     transition: 0.6s;
   }
 
   nav > a:hover {
-    color: #aaa;
+    color: #a52422;
   }
 `;
 
@@ -40,18 +40,18 @@ export const MenuStyled = styled.ul`
     font-weight: 500;
     font-style: italic;
     font-size: 1.3rem;
-    color: #000;
+    color: #fff;
 
     transition: 0.4s;
 
     &:hover {
-      color: #aaa;
+      color: #a52422;
     }
 
     &.active {
-      padding: 0.3rem;
-      background: black;
-      color: white;
+      padding: 0.4rem;
+      background: #a52422;
+      color: #fff;
     }
   }
 
@@ -68,8 +68,7 @@ export const MenuStyled = styled.ul`
     top: 5.3rem;
     left: 0;
 
-    background: #aaa;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: #2d4a8a;
   }
 `;
 
@@ -78,6 +77,7 @@ export const MenuIconContainerStyled = styled.div`
 
   svg {
     color: #fff;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {

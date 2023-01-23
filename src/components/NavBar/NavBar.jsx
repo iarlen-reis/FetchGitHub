@@ -16,21 +16,25 @@ const NavBar = () => {
   return (
     <Aside>
       <nav>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/">FindRepository</NavLink>
         <MenuStyled showMenu={showMenu}>
+          <li>
+            <NavLink onClick={toogleMenu} to="/favorites">
+              Favoritos
+            </NavLink>
+          </li>
           <li>
             <NavLink onClick={toogleMenu} to="/about">
               Sobre
             </NavLink>
           </li>
-          <li>
-            <NavLink onClick={toogleMenu} to="/contact">
-              Contact
-            </NavLink>
-          </li>
         </MenuStyled>
         <MenuIconContainerStyled>
-          <HiOutlineMenu size={30} onClick={toogleMenu} />
+          {!showMenu ? (
+            <HiOutlineMenu size={30} onClick={toogleMenu} />
+          ) : (
+            <RiCloseFill size={30} onClick={toogleMenu} />
+          )}
         </MenuIconContainerStyled>
       </nav>
     </Aside>
