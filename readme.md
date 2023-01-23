@@ -8,7 +8,7 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [x] Responsividade
-- [x] Buscar perfil
-- [ ] Listar repositórios do perfil
-- [ ] Favoritar perfil / repositório
+- [x] Responsividade.
+- [x] Buscar perfil.
+- [ ] Listar repositórios do perfil.
+- [ ] Favoritar perfil / repositório.
