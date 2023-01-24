@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FormStyled, HeaderStyled, ErrorMessage } from "./styles";
 
-import { useFetchUser } from "../../hooks/useFetchUser";
-
 import Profile from "../Profile/Profile";
+import axios from "axios";
 
 const Form = () => {
   const [user, setUser] = useState("");
@@ -13,6 +12,7 @@ const Form = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     setUserData(null);
     setErrorServer("");
 
@@ -20,16 +20,14 @@ const Form = () => {
 
     try {
       setLoading(true);
-      const userResponse = await useFetchUser(user);
+      const response = await axios(`https://api.github.com/users/${user}`);
 
-      setUserData(userResponse.data);
+      setUserData(response.data);
       setLoading(false);
     } catch (error) {
-      setErrorServer("Nenhum usuário encontrado!");
+      setErrorServer("Nenhum usuário foi encontrado.");
       setLoading(false);
     }
-
-    // setUser("");
   };
 
   return (
