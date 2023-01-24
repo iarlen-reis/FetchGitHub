@@ -1,7 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import { SectionStyled, InfoStyled, UserContainer } from "./styles";
 
 const Profile = ({ User }) => {
+  const navigate = useNavigate();
+
+  const handleRespository = async (event) => {
+    event.preventDefault();
+
+    navigate("/repositories");
+  };
+
   return (
     <SectionStyled>
       <UserContainer>
@@ -17,7 +27,7 @@ const Profile = ({ User }) => {
           </div>
           {User.location && <div>localização: {User.location}</div>}
         </InfoStyled>
-        <button>Repositórios</button>
+        <button onClick={handleRespository}>Repositórios</button>
       </UserContainer>
     </SectionStyled>
   );
