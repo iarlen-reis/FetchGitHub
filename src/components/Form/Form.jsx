@@ -4,6 +4,10 @@ import { FormStyled, HeaderStyled, ErrorMessage } from "./styles";
 import Profile from "../Profile/Profile";
 import axios from "axios";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 import { useRepositoryContext } from "../../contexts/RepositoryContext";
 
 const Form = () => {
@@ -33,9 +37,12 @@ const Form = () => {
       setRepository(reponseRepositories.data);
       setUserData(response.data);
 
+      toast.success("Usuário encontrado!");
       setLoading(false);
     } catch (error) {
       setErrorServer("");
+
+      toast.error("Usuário não foi encontrado.");
       setErrorServer("Nenhum usuário foi encontrado.");
       setLoading(false);
     }
@@ -49,7 +56,7 @@ const Form = () => {
       </HeaderStyled>
       <FormStyled onSubmit={handleSubmit}>
         <label>
-          <span>Digite o nome do usuário:</span>
+          <span>Digite o nome do usuário (Github):</span>
           <input
             type="text"
             value={user}
@@ -60,6 +67,7 @@ const Form = () => {
       </FormStyled>
       {errorServer && <ErrorMessage>Nenhum usuário encontrado.</ErrorMessage>}
       {userData && <Profile User={userData} />}
+      <ToastContainer />
     </>
   );
 };
