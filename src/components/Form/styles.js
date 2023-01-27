@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FormStyled = styled.form`
   max-width: 500px;
   width: 100%;
+
   display: flex;
   flex-direction: column;
 
@@ -11,6 +12,7 @@ export const FormStyled = styled.form`
   row-gap: 0.7rem;
 
   margin: 1rem auto;
+  margin-bottom: 2rem;
 
   border-radius: 4px;
   background: #0f0d26;

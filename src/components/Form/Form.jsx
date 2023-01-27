@@ -76,7 +76,11 @@ const Form = () => {
             onChange={({ target }) => setUser(target.value)}
           />
         </label>
-        {loading ? <button>Aguarde..</button> : <button>Procurar</button>}
+        {loading ? (
+          <button disabled>Aguarde...</button>
+        ) : (
+          <button>Procurar</button>
+        )}
       </FormStyled>
       {errorServer && <ErrorMessage>Nenhum usuário encontrado.</ErrorMessage>}
       {userData && <Profile User={userData} />}
