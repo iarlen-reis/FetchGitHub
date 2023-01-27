@@ -1,6 +1,6 @@
 import React from "react";
 import { DivRepository, InfoContainer, InfoContent, TecInfos } from "./styles";
-
+import { AiFillStar, AiOutlineFork } from "react-icons/ai";
 const Repository = ({ repository }) => {
   return (
     <DivRepository>
@@ -8,8 +8,9 @@ const Repository = ({ repository }) => {
       <p>{repository.description}</p>
       <InfoContainer>
         <InfoContent>
-          Forks: <span>{repository.forks_count}</span> | Stars:
-          <span>{repository.stargazers_count}</span>
+          <AiOutlineFork title="Forks" />: <span>{repository.forks_count}</span>{" "}
+          |
+          <AiFillStar title="Star" />:<span>{repository.stargazers_count}</span>
         </InfoContent>
         <TecInfos>
           {repository.topics.length > 0 && (

@@ -4,8 +4,6 @@ import { FormStyled, HeaderStyled, ErrorMessage } from "./styles";
 import Profile from "../Profile/Profile";
 import axios from "axios";
 
-import { ToastContainer, toast } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
 
 import { useRepositoryContext } from "../../contexts/RepositoryContext";
@@ -20,11 +18,10 @@ const Form = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!user) return;
 
     setUserData(null);
     setErrorServer("");
-
-    if (!user) return;
 
     try {
       setErrorServer("");
@@ -37,16 +34,32 @@ const Form = () => {
       setRepository(reponseRepositories.data);
       setUserData(response.data);
 
-      toast.success("Usuário encontrado!");
+      localStorage.setItem("user", JSON.stringify(response.data));
+      localStorage.setItem("username", JSON.stringify(response.data.name));
+      localStorage.setItem(
+        "repository",
+        JSON.stringify(reponseRepositories.data)
+      );
       setLoading(false);
     } catch (error) {
       setErrorServer("");
 
-      toast.error("Usuário não foi encontrado.");
       setErrorServer("Nenhum usuário foi encontrado.");
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const data = localStorage.getItem("user");
+    const repositoryData = localStorage.getItem("repository");
+    const username = localStorage.getItem("username");
+
+    if (data) {
+      setUserData(JSON.parse(data));
+      setRepository(JSON.parse(repositoryData));
+      setUserRepository(JSON.parse(username));
+    }
+  }, []);
 
   return (
     <>
@@ -67,7 +80,6 @@ const Form = () => {
       </FormStyled>
       {errorServer && <ErrorMessage>Nenhum usuário encontrado.</ErrorMessage>}
       {userData && <Profile User={userData} />}
-      <ToastContainer />
     </>
   );
 };

@@ -10,6 +10,7 @@ export const UserContainer = styled.div`
 `;
 
 export const SectionStyled = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -23,11 +24,15 @@ export const SectionStyled = styled.section`
 
   background: #191948;
 
+  svg {
+    color: #aaa;
+  }
+
   h2 {
     color: #fff;
     font-style: italic;
 
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
   }
 
   div > img {
@@ -72,11 +77,14 @@ export const InfoStyled = styled.div`
   row-gap: 0.3rem;
 
   p {
-    color: #fff;
     font-style: italic;
     font-weight: 600;
 
+    margin-top: 0.2rem;
+
     flex-wrap: wrap;
+
+    color: #fff;
   }
 
   p + div {
@@ -88,13 +96,28 @@ export const InfoStyled = styled.div`
   }
 
   p + div span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.3rem;
+
     font-style: italic;
+
+    margin: 0.2rem;
+
     color: #fff;
   }
 
   div + div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.3rem;
+
     font-style: italic;
     font-weight: 500;
+
+    margin: 0.2rem;
 
     color: #fff;
   }

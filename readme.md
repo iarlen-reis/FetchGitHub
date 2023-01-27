@@ -11,4 +11,5 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Responsividade.
 - [x] Buscar perfil.
 - [x] Listar repositórios do perfil.
+- [x] Persistência de dados com localstorage.
 - [ ] Favoritar perfil / repositório.

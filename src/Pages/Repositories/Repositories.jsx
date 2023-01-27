@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import { RepositoryContext } from "../../contexts/RepositoryContext";
 
@@ -6,7 +6,18 @@ import Repository from "../../components/Repository/Repository";
 import { SectionStyled } from "./styles";
 
 const Repositories = () => {
-  const { repository, userRepository } = useContext(RepositoryContext);
+  const { repository, userRepository, setUserRepository, setRepository } =
+    useContext(RepositoryContext);
+
+  useEffect(() => {
+    const repositoryData = localStorage.getItem("repository");
+    const username = localStorage.getItem("username");
+
+    if (repositoryData) {
+      setRepository(JSON.parse(repositoryData));
+      setUserRepository(JSON.parse(username));
+    }
+  }, []);
 
   return (
     <SectionStyled>

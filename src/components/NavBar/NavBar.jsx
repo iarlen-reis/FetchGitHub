@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import { HiOutlineMenu } from "react-icons/hi";
 import { RiCloseFill } from "react-icons/ri";
+import { AiFillGithub } from "react-icons/ai";
 
 import { Aside, MenuIconContainerStyled, MenuStyled } from "./styles";
 
@@ -27,6 +28,14 @@ const NavBar = () => {
             <NavLink onClick={toogleMenu} to="/about">
               Sobre
             </NavLink>
+          </li>
+          <li>
+            <a
+              href="https://github.com/iarlen-reis/FetchGitHub"
+              target="_blank"
+            >
+              <AiFillGithub size={30} color="white" />
+            </a>
           </li>
         </MenuStyled>
         <MenuIconContainerStyled>

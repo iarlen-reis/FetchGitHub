@@ -34,6 +34,7 @@ export const Aside = styled.aside`
 
 export const MenuStyled = styled.ul`
   display: flex;
+  align-items: center;
   column-gap: 1rem;
 
   li a {
@@ -53,6 +54,15 @@ export const MenuStyled = styled.ul`
       background: #a52422;
       color: #fff;
     }
+  }
+
+  li a svg {
+    transform: scale(1);
+    transition: 0.4s;
+  }
+
+  li a svg:hover {
+    transform: scale(1.2);
   }
 
   @media (max-width: 768px) {

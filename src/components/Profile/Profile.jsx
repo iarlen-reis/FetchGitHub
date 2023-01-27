@@ -2,6 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { SectionStyled, InfoStyled, UserContainer } from "./styles";
+import { ImLocation2 } from "react-icons/im";
+import { RiUserFollowFill } from "react-icons/ri";
+import { BsFillPersonFill } from "react-icons/bs";
+import { GrFavorite } from "react-icons/gr";
 
 const Profile = ({ User }) => {
   const navigate = useNavigate();
@@ -19,13 +23,21 @@ const Profile = ({ User }) => {
         <div>
           <img src={User.avatar_url} alt={User.name} />
         </div>
-        <InfoStyled>
+        <InfoStyled title="Biografia">
           <p>{User.bio}</p>
           <div>
-            <span>Seguidores: {User.followers}</span>
-            <span>Seguindo: {User.following}</span>
+            <span title="Seguindo">
+              <RiUserFollowFill />: {User.following}
+            </span>
+            <span title="Seguidores">
+              <BsFillPersonFill />: {User.followers}
+            </span>
           </div>
-          {User.location && <div>localização: {User.location}</div>}
+          {User.location && (
+            <div title="localização">
+              <ImLocation2 />: {User.location}
+            </div>
+          )}
         </InfoStyled>
         <button onClick={handleRespository}>Repositórios</button>
       </UserContainer>
