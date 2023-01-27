@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Main, HeaderStyled, ImageContainerStyled } from "./styles";
-import aboutImage from "/home/iarlen/Documentos/GithubRepository/public/about-image.png";
+import aboutImage from "/public/about-image.png";
 
 const About = () => {
   return (
