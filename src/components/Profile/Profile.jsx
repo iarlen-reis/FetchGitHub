@@ -1,15 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { SectionStyled, InfoStyled, UserContainer } from "./styles";
+import {
+  SectionStyled,
+  InfoStyled,
+  UserContainer,
+  ContainerFavoriteStyled,
+} from "./styles";
+
 import { ImLocation2 } from "react-icons/im";
 import { RiUserFollowFill } from "react-icons/ri";
 import { BsFillPersonFill } from "react-icons/bs";
-import { GrFavorite } from "react-icons/gr";
 
 const Profile = ({ User }) => {
   const navigate = useNavigate();
-
   const handleRespository = async (event) => {
     event.preventDefault();
 

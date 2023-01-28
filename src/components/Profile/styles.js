@@ -122,3 +122,13 @@ export const InfoStyled = styled.div`
     color: #fff;
   }
 `;
+
+export const ContainerFavoriteStyled = styled.div`
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+
+  cursor: pointer;
+
+  color: #fff;
+`;
