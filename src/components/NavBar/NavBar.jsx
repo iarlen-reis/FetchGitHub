@@ -20,6 +20,10 @@ const NavBar = () => {
     setShowMenu(!showMenu);
   };
 
+  const handleTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Aside id="nav">
       <nav>
@@ -53,9 +57,7 @@ const NavBar = () => {
         </MenuIconContainerStyled>
       </nav>
       <BackToTopStyled>
-        <a href="#nav">
-          <BiArrowToTop size={35} color="#FFF" />
-        </a>
+        <BiArrowToTop size={35} color="#FFF" onClick={handleTop} />
       </BackToTopStyled>
     </Aside>
   );

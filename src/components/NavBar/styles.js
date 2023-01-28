@@ -106,6 +106,7 @@ export const BackToTopStyled = styled.div`
 
   svg {
     transition: 0.4s;
+    cursor: pointer;
 
     &:hover {
       color: #aaa;
