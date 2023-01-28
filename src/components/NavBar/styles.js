@@ -94,3 +94,22 @@ export const MenuIconContainerStyled = styled.div`
     display: block;
   }
 `;
+
+export const BackToTopStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+
+  bottom: 2rem;
+  right: 1rem;
+
+  svg {
+    transition: 0.4s;
+
+    &:hover {
+      color: #aaa;
+      transform: scale(1.1);
+    }
+  }
+`;

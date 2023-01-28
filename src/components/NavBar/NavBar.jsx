@@ -4,8 +4,14 @@ import { NavLink } from "react-router-dom";
 import { HiOutlineMenu } from "react-icons/hi";
 import { RiCloseFill } from "react-icons/ri";
 import { AiFillGithub } from "react-icons/ai";
+import { BiArrowToTop } from "react-icons/bi";
 
-import { Aside, MenuIconContainerStyled, MenuStyled } from "./styles";
+import {
+  Aside,
+  MenuIconContainerStyled,
+  MenuStyled,
+  BackToTopStyled,
+} from "./styles";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -15,7 +21,7 @@ const NavBar = () => {
   };
 
   return (
-    <Aside>
+    <Aside id="nav">
       <nav>
         <NavLink to="/">FindRepository</NavLink>
         <MenuStyled showMenu={showMenu}>
@@ -46,6 +52,11 @@ const NavBar = () => {
           )}
         </MenuIconContainerStyled>
       </nav>
+      <BackToTopStyled>
+        <a href="#nav">
+          <BiArrowToTop size={35} color="#FFF" />
+        </a>
+      </BackToTopStyled>
     </Aside>
   );
 };
