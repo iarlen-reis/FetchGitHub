@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DivRepository = styled.div`
-  width: 300px;
+  width: 400px;
 
   display: flex;
   flex-direction: column;
@@ -22,12 +22,39 @@ export const DivRepository = styled.div`
   }
 
   p {
+    max-width: 100%;
+
     color: #fff;
     font-weight: 500;
     font-style: italic;
 
     text-align: center;
-    max-width: 200px;
+
+    background: red;
+  }
+
+  @media (max-width: 429px) {
+    width: 350px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 390px) {
+    width: 320px;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 350px) {
+    width: 300px;
+  }
+
+  p {
+    font-size: 0.8rem;
   }
 `;
 

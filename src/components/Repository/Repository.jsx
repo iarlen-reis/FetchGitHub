@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { DivRepository, InfoContainer, InfoContent, TecInfos } from "./styles";
 import { AiFillStar, AiOutlineFork } from "react-icons/ai";
+
 const Repository = ({ repository }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
