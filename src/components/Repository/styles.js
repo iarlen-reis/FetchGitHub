@@ -29,8 +29,6 @@ export const DivRepository = styled.div`
     font-style: italic;
 
     text-align: center;
-
-    background: red;
   }
 
   @media (max-width: 429px) {
